@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 20;
+    padding: 20;
 }
 body {
     background-color: rgb(16, 1, 1);
@@ -42,8 +42,8 @@ gap: 1.5vmin;
 #newbtn {
     padding: 1rem;
     font-size: 1.25rem;
-    background-color: black;
-    color: goldenrod;
+    background-color: goldenrod;
+    color: black;
     border-radius: 1rem;
     border: none;
 
