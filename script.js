@@ -2,6 +2,10 @@ console.log("hello ksdlm");
 
 let boxes = document.querySelectorAll(".box");
 let resetbtn1 = document.querySelector("#resetbtn");
+let newBtn = document.querySelector("#newbtn");
+let msgcontainer = document.querySelector(".msg-container");
+let msg = document.querySelector("#msg");
+
 let turnO = true; //playerX, playerO
 const winPatterns = [
     [0, 1, 2],
@@ -13,6 +17,36 @@ const winPatterns = [
     [3, 4, 5],
     [6, 7, 8],
 ];
+const resetGame = (()=>{
+    turnO= true;
+    enableboxes();
+    msgcontainer.classList.add("hide");
+})
+const disabledboxes = (()=>{
+for(let box of boxes){
+    box.disabled = true;
+}
+})
+const enableboxes = (()=>{
+  for(let box of boxes){
+        box.disabled = false;
+        box.innerText ="";
+    msgcontainer.classList.add("hide");
+} 
+})
+
+const showWinner = (winner) =>{
+msg.innerText =`Congraulations, winner is ${winner}.`;
+msgcontainer.classList.remove("hide");
+}
+const resetboxes = (() => {
+    resetbtn1.addEventListener("click", () => {
+        console.log("reset button was clicked");
+        enableboxes();
+    })
+});
+resetboxes();
+newBtn.addEventListener("click",resetGame);
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
@@ -39,7 +73,9 @@ const checkWinner = () => {
     //console.log(boxes[pattern[0]].innerText, boxes[pattern[1]].innerText, boxes[pattern[2]].innerText);
 if (pos1Val!= "" && pos2Val != "" && pos3Val != ""){
     if(pos1Val === pos2Val && pos2Val === pos3Val){
+        disabledboxes();
         console.log("Winner", pos1Val);
+        showWinner(pos1Val);
     }
 } 
 }
