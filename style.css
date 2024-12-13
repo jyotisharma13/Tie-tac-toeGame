@@ -34,8 +34,29 @@ gap: 1.5vmin;
 #resetbtn {
     padding: 1rem;
     font-size: 1.25rem;
+    background-color:  goldenrod;
+    color: black;
+    border-radius: 1rem;
+    border: none; 
+}
+#newbtn {
+    padding: 1rem;
+    font-size: 1.25rem;
     background-color: black;
     color: goldenrod;
     border-radius: 1rem;
-    border: none; 
+    border: none;
+
+}
+#msg {
+color: goldenrod;
+font-size: 5vmin;
+}
+#msg-container {
+    height: 40vmin;
+   
+
+}
+.hide {
+    display: none;
 }
